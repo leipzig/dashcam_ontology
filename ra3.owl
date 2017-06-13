@@ -251,7 +251,7 @@ DataProperty: ra:vehicleCategory
         ra:Vehicle
     
     Range: 
-        {"bicycle" , "bus" , "car" , "motocycle" , "truck"}
+        {"bicycle" , "bus" , "car" , "van", "motocycle" , "truck"}
     
     
 DataProperty: ra:driverLicenceCategory
@@ -566,7 +566,7 @@ DataProperty: ra:declares
 DataProperty: ra:driverProblem
 
     Range: 
-        {"asleep" , "heartattack" , "lostcontrol" , "mistake" , "notlooking" , "onthephone"}
+        {"asleep" , "heartattack" , "lostcontrol" , "mistake" , "notlooking" , "onthephone", "drivingtooclosely"}
     
     
 DataProperty: ra:orgFullName

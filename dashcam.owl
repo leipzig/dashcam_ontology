@@ -45,7 +45,7 @@ DataProperty: do:collisionType
         ra:RoadAccident
     
     Range: 
-        {"t-bone" , "head-on" , "rollover" , "rear-end"}
+        {"t-bone" , "head-on" , "rollover" , "rear-end", "side-swipe"}
 
 Class: do:video
 
@@ -81,3 +81,14 @@ DataProperty: do:accidentDesc
     
     Range: 
         xsd:string
+
+DataProperty: do:isFilming
+
+    Annotations: 
+        rdfs:comment "is this vehicle filming"
+    
+    Domain: 
+        ra:Vehicle
+    
+    Range: 
+        xsd:boolean
