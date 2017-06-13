@@ -34,23 +34,12 @@ Datatype: xsd:string
 Datatype: xsd:integer
 
 
-DataProperty: do:dashcamVehicle
-
-    Annotations: 
-        rdfs:comment "is the vehicle filming"
-
-    Domain: 
-        ra:Vehicle
-    
-    Range: 
-        xsd:boolean
-
 Class: do:collision
 
     SubClassOf: 
         ra:RoadAccident
 
-DataProperty: do:collision
+DataProperty: do:collisionType
 
     Domain: 
         ra:RoadAccident
@@ -58,10 +47,15 @@ DataProperty: do:collision
     Range: 
         {"t-bone" , "head-on" , "rollover" , "rear-end"}
 
+Class: do:video
+
+    SubClassOf: 
+        ra:NonLivingThing
+
 DataProperty: do:videoUrl
 
     Domain: 
-        ra:RoadAccident
+        do:video
     
     Range: 
 		xsd:anyURI
@@ -76,3 +70,14 @@ DataProperty: do:videoTime
     
     Range: 
 		xsd:integer
+
+DataProperty: do:accidentDesc
+
+    Annotations: 
+        rdfs:comment "what happened in plain english"
+    
+    Domain: 
+        ra:RoadAccident
+    
+    Range: 
+        xsd:string
