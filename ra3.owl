@@ -4,9 +4,9 @@ Prefix: xml: <http://www.w3.org/XML/1998/namespace>
 Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix: : <http://www.w3.org/ontologies/2012/6/ra.owl#>
+Prefix: : <https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/ra3.owl#>
 
-Prefix: ra: <ra:https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/ra3.ow#>
+Prefix: ra: <ra:https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/ra3.owl#>
 
 Ontology: <https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/ra3.owl>
 

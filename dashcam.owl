@@ -1,0 +1,78 @@
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: ra: <ra:https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/ra3.owl#>
+Prefix: : <https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/dashcam.owl#>
+
+Ontology: <https://raw.githubusercontent.com/leipzig/dashcam_ontology/master/dashcam.owl>
+
+
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: xsd:positiveInteger
+
+    
+Datatype: xsd:anyURI
+
+    
+Datatype: xsd:date
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:string
+
+    
+Datatype: xsd:integer
+
+
+DataProperty: do:dashcamVehicle
+
+    Annotations: 
+        rdfs:comment "is the vehicle filming"
+
+    Domain: 
+        ra:Vehicle
+    
+    Range: 
+        xsd:boolean
+
+Class: do:collision
+
+    SubClassOf: 
+        ra:RoadAccident
+
+DataProperty: do:collision
+
+    Domain: 
+        ra:RoadAccident
+    
+    Range: 
+        {"t-bone" , "head-on" , "rollover" , "rear-end"}
+
+DataProperty: do:videoUrl
+
+    Domain: 
+        ra:RoadAccident
+    
+    Range: 
+		xsd:anyURI
+		
+DataProperty: do:videoTime
+
+    Annotations: 
+        rdfs:comment "the time in seconds into the video when the accident occurs"
+
+    Domain: 
+        ra:RoadAccident
+    
+    Range: 
+		xsd:integer
