@@ -1,0 +1,224 @@
+Individual: cct_ep172
+	Types:
+		do:Video
+
+	Facts:
+		do:videoUrl  "https://www.youtube.com/watch?v=DpQBo4gb6Lw",
+		ra:makeDate  "04/06/2017"
+		
+Individual: cct_ep75
+	Types:
+		do:Video
+
+	Facts:
+		do:videoUrl  "https://www.youtube.com/watch?v=DpQBo4gb6Lw",
+		ra:makeDate  "12/07/2015"
+
+Individual: ep172_12s
+
+    Types: 
+        ra:RoadAccident
+		
+	Facts:
+		ra:location  Russia
+		ra:isIn  cct_ep172
+		do:videoTime  12
+		do:accidentDesc "Mercedes pulls out blind in front of trolley"
+		ra:isSerious  "false"
+		
+		
+Individual: ep172_13s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep172_12s
+		do:videoTime  13
+		do:collisionType "t-bone"
+
+Individual: ep172_12s_mercedes
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep172_13s,
+		ra:relatedDamage  "minor drivers side damage",
+		ra:vehicleBrand  "Mercedes",
+		ra:vehicleCategory  "car",
+		ra:trafficViolation  "priority",
+		ra:driverProblem  "notlooking",
+		ra:isFilming  "false",
+
+Individual: ep172_38s
+    Types: 
+        ra:RoadAccident
+	Facts:
+		do:videoTime  38
+		do:accidentDesc "Rear ends existing accident and is hit by dashcam vehicle"
+		ra:isSerious  "false"
+
+Individual: ep172_41s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep172_38s
+		do:videoTime  41
+		do:accidentDesc "Rear ends existing accident"
+		do:collisionType "rear-end"
+
+Individual: ep172_42s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep172_38s
+		do:videoTime  42
+		do:accidentDesc "ep172_42s_tboner t-bones ep172_41s_strikee rear-ended by ep172_41s_striker"
+		do:collisionType "t-bone"
+
+Individual: ep172_41s_striker
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep172_41s,
+		ra:vehicleCategory  "car",
+		ra:driverProblem  "drivingtooclosely",
+		ra:isFilming  "false",
+		ra:vehicleCategory  "car",
+
+Individual: ep172_41s_strikee
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep172_41s,
+		ra:involvedIn  ep172_42s,
+		ra:vehicleCategory  "car",
+		ra:isFilming  "false",
+		ra:vehicleCategory  "car",
+	
+Individual: ep172_42s_tboner
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep172_42s,
+		ra:vehicleCategory  "car",
+		ra:isFilming  "true"
+
+Individual: ep75_64s_and_ep75_73s
+
+    Types: 
+        ra:RoadAccident
+
+	Facts:
+		do:accidentDesc "ep75_64s_tboner tbones ep75_64s_tbonee and ep75_64s_tbonee swipes ep75_73s_dashcam"
+		ra:isSerious  "false"
+		
+Individual: ep75_64s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep172_64s_and_ep75_73s,
+		do:videoTime  64,
+		do:accidentDesc "ep75_64s_tboner tbones ep75_64s_tbonee ",
+		do:collisionType "t-bone",
+
+Individual: ep75_73s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep172_64s_and_ep75_73s,
+		do:videoTime  73,
+		do:accidentDesc "ep75_64s_tbonee swipes ep75_73s_dashcam",
+		do:collisionType "side-swipe",
+		
+
+Individual: ep75_64s_tboner
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep75_64s,
+		ra:vehicleCategory  "car",
+		ra:isFilming  "false",
+
+Individual: ep75_64s_tbonee
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep75_64s,
+		ra:involvedIn  ep75_73s,
+		ra:vehicleCategory  "van",
+		ra:trafficViolation  "redlight",
+		ra:isFilming  "false",
+
+Individual: ep75_73s_dashcam
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep75_73s,
+		ra:vehicleCategory  "car",
+		ra:isFilming  "true",
+
+
+Individual: ep75_154s
+
+    Types: 
+        ra:RoadAccident
+
+	Facts:
+		do:accidentDesc "ep75_156s_laner changing lanes blindly is side-swiped by ep75_156s_speeder, who then rolls over"
+		ra:isSerious  "true"
+
+Individual: ep75_156s
+
+    Types: 
+        do:Collision
+	
+	Facts:
+		ra:isIn  ep75_154s,
+		do:videoTime  156,
+		do:accidentDesc "ep75_156s_laner changing lanes blindly is side-swiped by ep75_156s_speeder",
+		do:collisionType "side-swipe",
+
+
+Individual: ep75_156s_laner
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep75_154s,
+		ra:vehicleCategory  "car",
+		ra:driverProblem  "notlooking",
+		ra:isFilming  "false",
+
+Individual: ep75_156s_speeder
+
+    Types: 
+        ra:Vehicle
+    
+    Facts:  
+		ra:involvedIn  ep75_154s,
+		ra:vehicleCategory  "car",
+		ra:trafficViolation  "speed",
+		ra:isFilming  "false",
